@@ -71,10 +71,10 @@ body {
 
 .movie-card img {
     width: 100%;
-    height: auto;
+    height: 112px; /* Tinggi tetap 112px */
     display: block;
-    aspect-ratio: 2 / 3; /* Menjaga rasio gambar tetap konsisten */
-    object-fit: cover;
+    aspect-ratio: 200 / 112; /* Rasio lebar 200px, tinggi 112px */
+    object-fit: cover; /* Penting: Gambar akan dipotong agar pas tanpa distorsi */
 }
 
 /* Lapisan Overlay Saat Hover */
@@ -159,3 +159,4 @@ body {
         font-size: 0.9rem;
     }
 }
+
