@@ -1,163 +1,84 @@
-/* Pengaturan Dasar */
-* {
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+header {
+    background-color: #141414;
+    padding: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    color: #e50914;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-.main-header {
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #333;
-}
-
-.main-header .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
-.site-title {
-    font-size: 2rem;
-    font-weight: bold;
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-/* Grid Video */
+main {
+    padding: 2rem;
+}
+
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-/* Kartu Video */
-.movie-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    overflow: hidden;
-    border-radius: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .movie-card {
-    background-color: #1e1e1e;
-    border-radius: 8px;
+    background-color: #222;
+    border-radius: 5px;
     overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s;
 }
 
 .movie-card:hover {
     transform: scale(1.05);
 }
 
+.movie-card a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .movie-card img {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 2 / 3; /* Menjaga rasio gambar tetap konsisten */
-    object-fit: cover;
 }
 
-/* Lapisan Overlay Saat Hover */
-.movie-card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0) 80%);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Konten di bagian bawah */
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 20px;
-}
-
-.movie-card:hover .movie-card-overlay {
-    opacity: 1;
-}
-
-.movie-card-overlay .movie-title {
+.movie-title {
+    padding: 1rem;
     font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+    text-align: center;
 }
-
-.movie-card:hover .movie-card-overlay .movie-title {
-    transform: translateY(0);
-}
-
-.play-icon {
-    font-size: 3rem;
-    color: #fff;
-    opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -1.5rem; /* Setengah dari ukuran font */
-    margin-top: -2rem;
-}
-
-.movie-card:hover .play-icon {
-    opacity: 0.8;
-    transform: scale(1);
-}
-
-.movie-meta {
-    font-size: 0.8rem;
-    color: #ccc;
-    font-weight: 500;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-    transition-delay: 0.1s;
-}
-
-.movie-card:hover .movie-card-overlay .movie-meta {
-    transform: translateY(0);
-}
-
-/* Responsif untuk Layar Kecil */
-@media (max-width: 768px) {
-    .site-title {
-        font-size: 1.5rem;
-    }
-    .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-    .movie-card-overlay {
-        padding: 10px;
-    }
-    .movie-card-overlay .movie-title {
-        font-size: 0.9rem;
-    }
-}
-
-
