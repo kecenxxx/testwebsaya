@@ -137,3 +137,22 @@ body, header, nav, .logo a, .nav-links, main, .movie-grid, .movie-card, .movie-t
     text-align: center;
     padding: 2rem 0;
 }
+
+footer {
+    background-color: #0a0a0a; /* Sedikit lebih gelap dari latar belakang utama */
+    color: #888;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem; /* Memberi jarak dari konten di atasnya */
+    border-top: 1px solid #222;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .disclaimer {
+    font-size: 0.8rem;
+    color: #666;
+}
