@@ -1,43 +1,28 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sedang Memutar...</title>
+    <title>Now Playing</title>
     <link rel="stylesheet" href="player.css">
 </head>
 <body>
-
     <div class="player-container">
-        <h1 id="movie-title">Memuat video...</h1>
-        <div class="video-wrapper">
-            <iframe id="movie-player" frameborder="0" allowfullscreen></iframe>
+        <h1 id="movie-title"></h1>
+        <div class="iframe-wrapper">
+            <iframe id="video-player" width="100%" height="100%" src="" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
         </div>
-        <a href="index.html" class="back-button">← Kembali ke Halaman Utama</a>
+        <a href="index.html" class="back-button">Back to Home</a>
     </div>
 
     <script>
         window.onload = function() {
-            // Ambil parameter dari URL
             const urlParams = new URLSearchParams(window.location.search);
-            const embedUrl = urlParams.get('embedUrl');
-            const movieTitleParam = urlParams.get('title');
+            const title = urlParams.get('title');
+            const embedUrl = urlParams.get('embed');
 
-            const playerFrame = document.getElementById('movie-player');
-            const movieTitleElement = document.getElementById('movie-title');
-            
-            if (embedUrl) {
-                // Set sumber iframe dengan URL dari parameter
-                playerFrame.src = embedUrl;
-                
-                // Set judul halaman
-                const title = decodeURIComponent(movieTitleParam || "Film Pilihan");
-                movieTitleElement.textContent = title;
-                document.title = "Nonton: " + title;
-            } else {
-                // Tampilkan pesan error jika tidak ada URL
-                movieTitleElement.textContent = "Error: Link video tidak ditemukan.";
-            }
+            document.getElementById('movie-title').innerText = title;
+            document.getElementById('video-player').src = embedUrl;
         };
     </script>
 </body>
