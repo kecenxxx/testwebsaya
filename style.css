@@ -132,3 +132,8 @@ body, header, nav, .logo a, .nav-links, main, .movie-grid, .movie-card, .movie-t
     text-align: center;
     padding: 2rem 0;
 }
+
+.ad-container {
+    text-align: center;
+    margin-bottom: 2rem; /* Memberi jarak ke konten di bawahnya */
+}
