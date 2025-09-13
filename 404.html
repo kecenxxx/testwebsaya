@@ -42,6 +42,18 @@
             color: #6c757d;
             margin-bottom: 30px;
         }
+        
+        /* [BARU] Styling untuk pesan hitung mundur */
+        #redirect-message {
+            font-size: 16px;
+            color: #6c757d;
+            margin-top: 25px;
+            margin-bottom: -15px; /* Mengurangi jarak ke tombol di bawahnya */
+        }
+        #redirect-message strong {
+            color: #1d3557; /* Warna angka timer */
+        }
+        
         /* Styling untuk tombol kembali ke beranda */
         .btn-home {
             display: inline-block;
@@ -52,6 +64,7 @@
             background-color: #457b9d; /* Warna utama tombol */
             padding: 12px 24px;
             border-radius: 8px;
+            margin-top: 30px; /* Memberi jarak dari pesan timer */
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .btn-home:hover {
@@ -68,7 +81,33 @@
             Maaf, halaman yang Anda cari mungkin telah dihapus, dipindahkan,
             atau tidak pernah ada.
         </p>
-        <a href="/" class="btn-home">Kembali ke Beranda</a>
+
+        <p id="redirect-message">
+            Anda akan dialihkan ke beranda dalam 
+            <strong id="timer">3</strong> detik...
+        </p>
+
+        <a href="/" class="btn-home">Kembali ke Beranda Sekarang</a>
     </div>
+
+    <script>
+        (function() {
+            var seconds = 3; // Waktu hitung mundur dalam detik
+            var timerElement = document.getElementById('timer');
+            
+            var countdown = setInterval(function() {
+                seconds--;
+                if (timerElement) {
+                    timerElement.textContent = seconds;
+                }
+                
+                // Ketika hitungan mencapai 0, hentikan interval dan redirect
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    window.location.href = '/'; // Alihkan ke Beranda
+                }
+            }, 1000); // Update setiap 1 detik
+        })();
+    </script>
 </body>
 </html>
