@@ -52,6 +52,57 @@ main {
     padding: 2rem;
 }
 
+.page-container {
+    display: flex;
+    max-width: 1400px;          /* sesuaikan lebar maksimal halaman */
+    margin: 0 auto;             /* center halaman */
+    position: relative;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    /* jika ingin ada jarak dari sidebar */
+    margin-right: 320px;        /* lebar sidebar + margin */
+}
+
+.sidebar {
+    width: 300px;               /* lebar banner biasanya 300px atau 336px */
+    position: sticky;           /* tetap terlihat saat scroll (lebih modern) */
+    top: 20px;                  /* jarak dari atas saat sticky */
+    height: fit-content;        /* agar tidak full height paksa */
+    /* atau pakai fixed jika ingin selalu di posisi yang sama */
+    /* position: fixed; */
+    /* right: 20px; */
+    /* top: 100px; */
+}
+
+.ad-banner {
+    margin-bottom: 20px;        /* jarak antar 2 banner */
+    text-align: center;
+}
+
+/* Optional: agar banner responsif di mobile (sidebar hilang atau jadi bawah) */
+@media (max-width: 1024px) {
+    .page-container {
+        flex-direction: column;
+    }
+    main {
+        margin-right: 0;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .ad-banner {
+        margin: 10px;
+    }
+}
+
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -156,3 +207,4 @@ footer .disclaimer {
     font-size: 0.8rem;
     color: #666;
 }
+
