@@ -54,7 +54,7 @@ main {
 
 .page-container {
     display: flex;
-    max-width: 1400px;          /* sesuaikan lebar maksimal halaman */
+    max-width: 1200px;          /* sesuaikan lebar maksimal halaman */
     margin: 0 auto;             /* center halaman */
     position: relative;
 }
@@ -68,7 +68,7 @@ main {
 
 .sidebar {
     width: 300px;               /* lebar banner biasanya 300px atau 336px */
-    position: sticky;           /* tetap terlihat saat scroll (lebih modern) */
+    position: fixed;           /* tetap terlihat saat scroll (lebih modern) */
     top: 20px;                  /* jarak dari atas saat sticky */
     height: fit-content;        /* agar tidak full height paksa */
     /* atau pakai fixed jika ingin selalu di posisi yang sama */
@@ -207,4 +207,5 @@ footer .disclaimer {
     font-size: 0.8rem;
     color: #666;
 }
+
 
