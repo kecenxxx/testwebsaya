@@ -53,10 +53,10 @@ main {
 }
 
 .page-container {
+    max-width: 1300px;   /* atau 1200px */
+    margin: 0 auto;
     display: flex;
-    max-width: 1200px;          /* sesuaikan lebar maksimal halaman */
-    margin: 0 auto;             /* center halaman */
-    position: relative;
+    gap: 10px;           /* <-- kurangi dari 20px jadi 10px atau 15px */
 }
 
 main {
@@ -207,5 +207,6 @@ footer .disclaimer {
     font-size: 0.8rem;
     color: #666;
 }
+
 
 
